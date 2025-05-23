@@ -2,9 +2,10 @@ version: '3.8'
 
 services:
   app:
-    build: .
+    image: atnxrr/docker-project-74
+    build:
+      context: .
+      dockerfile: Dockerfile.production
     container_name: app
     working_dir: /app
     command: make test
-    volumes:
-      - ./app:/app
